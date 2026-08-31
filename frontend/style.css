@@ -1504,3 +1504,87 @@ body {
     }
 
 }
+/* ==========================================
+   SETTINGS PAGE
+========================================== */
+
+.settings-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 18px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.settings-row strong {
+    display: block;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.settings-row p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #7f8ba8;
+}
+
+.settings-row > span {
+    font-size: 14px;
+
+    color: #dbe4ff;
+
+    white-space: nowrap;
+}
+
+.status-success {
+    color: #32d583 !important;
+
+    font-weight: 600;
+}
+
+
+/* Settings logout button */
+
+#logoutButton {
+    width: 280px;
+
+    border: none;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .settings-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    #logoutButton {
+        width: 100%;
+    }
+
+}

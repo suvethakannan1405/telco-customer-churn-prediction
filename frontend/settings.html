@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telco AI - Settings</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                📊
+            </div>
+
+            <div>
+                <h2>Telco AI</h2>
+                <p>Customer Intelligence</p>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="dataset.html" class="nav-item">
+                <span>👥</span>
+                Dataset Overview
+            </a>
+
+            <a href="analytics.html" class="nav-item">
+                <span>📈</span>
+                Churn Analytics
+            </a>
+
+            <a href="model-performance.html" class="nav-item">
+                <span>🤖</span>
+                Model Performance
+            </a>
+
+            <a href="prediction.html" class="nav-item">
+                <span>🔮</span>
+                Customer Prediction
+            </a>
+
+
+            <p class="nav-title nav-title-space">
+                SYSTEM
+            </p>
+
+            <!-- Settings -->
+            <a href="settings.html" class="nav-item active">
+                <span>⚙️</span>
+                Settings
+            </a>
+
+            <!-- Logout -->
+            <a href="#" class="nav-item" id="logoutBtn">
+                <span>🚪</span>
+                Logout
+            </a>
+
+        </nav>
+
+
+        <!-- ================= AI STATUS ================= -->
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong>
+                        AI System Online
+                    </strong>
+
+                    <small>
+                        Model ready for prediction
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="breadcrumb">
+                    TELCO AI / SETTINGS
+                </p>
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Manage your account and application settings.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="user-profile">
+
+                    <div class="user-avatar" id="userAvatar">
+                        U
+                    </div>
+
+                    <div class="user-details">
+
+                        <strong id="settingsUsername">
+                            User
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= ACCOUNT SETTINGS ================= -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        👤 Account Settings
+                    </h3>
+
+                    <p>
+                        View your current account information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-info">
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <strong>
+                            Username
+                        </strong>
+
+                        <p>
+                            Your logged-in username
+                        </p>
+
+                    </div>
+
+                    <span id="accountUsername">
+                        Loading...
+                    </span>
+
+                </div>
+
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <strong>
+                            Account Type
+                        </strong>
+
+                        <p>
+                            Access level
+                        </p>
+
+                    </div>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= APPLICATION SETTINGS ================= -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        ⚙️ Application Settings
+                    </h3>
+
+                    <p>
+                        Information about the Telco AI system.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-info">
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <strong>
+                            AI Model
+                        </strong>
+
+                        <p>
+                            Customer churn prediction model
+                        </p>
+
+                    </div>
+
+                    <span class="status-success">
+                        ● Online
+                    </span>
+
+                </div>
+
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <strong>
+                            Backend API
+                        </strong>
+
+                        <p>
+                            Flask prediction server
+                        </p>
+
+                    </div>
+
+                    <span class="status-success">
+                        ● Connected
+                    </span>
+
+                </div>
+
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <strong>
+                            System Version
+                        </strong>
+
+                        <p>
+                            Telco AI Customer Intelligence
+                        </p>
+
+                    </div>
+
+                    <span>
+                        v1.0
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACCOUNT ACTION ================= -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        🚪 Account
+                    </h3>
+
+                    <p>
+                        Sign out from your Telco AI account.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutButton"
+                class="login-button"
+                type="button"
+            >
+                🚪 Logout
+            </button>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const API_URL = "http://127.0.0.1:5000";
+
+
+/* ==========================================
+   CHECK LOGIN
+========================================== */
+
+fetch(
+    API_URL + "/auth-check",
+    {
+        method: "GET",
+        credentials: "include"
+    }
+)
+.then(response => {
+
+    if (!response.ok) {
+
+        window.location.href = "index.html";
+
+        return null;
+    }
+
+    return response.json();
+
+})
+.then(data => {
+
+    if (data && data.username) {
+
+        document.getElementById(
+            "settingsUsername"
+        ).textContent = data.username;
+
+
+        document.getElementById(
+            "accountUsername"
+        ).textContent = data.username;
+
+
+        document.getElementById(
+            "userAvatar"
+        ).textContent =
+            data.username.charAt(0).toUpperCase();
+
+    }
+
+})
+.catch(error => {
+
+    console.error(
+        "Authentication error:",
+        error
+    );
+
+});
+
+
+/* ==========================================
+   LOGOUT FUNCTION
+========================================== */
+
+function logoutUser() {
+
+    fetch(
+        API_URL + "/logout",
+        {
+            method: "POST",
+            credentials: "include"
+        }
+    )
+    .then(response => response.json())
+    .then(data => {
+
+        window.location.href = "index.html";
+
+    })
+    .catch(error => {
+
+        console.error(
+            "Logout error:",
+            error
+        );
+
+    });
+
+}
+
+
+/* ==========================================
+   SIDEBAR LOGOUT
+========================================== */
+
+document.getElementById(
+    "logoutBtn"
+).addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+
+        logoutUser();
+
+    }
+);
+
+
+/* ==========================================
+   SETTINGS LOGOUT BUTTON
+========================================== */
+
+document.getElementById(
+    "logoutButton"
+).addEventListener(
+    "click",
+    function() {
+
+        logoutUser();
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
