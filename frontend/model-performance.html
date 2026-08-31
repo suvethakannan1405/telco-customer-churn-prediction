@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Telco AI - Model Performance</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+<div class="dashboard-layout">
+
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                📊
+            </div>
+
+            <div>
+
+                <h2>Telco AI</h2>
+
+                <p>
+                    Customer Intelligence
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <span>📊</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="dataset.html"
+                class="nav-item"
+            >
+
+                <span>👥</span>
+
+                Dataset Overview
+
+            </a>
+
+
+            <a
+                href="analytics.html"
+                class="nav-item"
+            >
+
+                <span>📈</span>
+
+                Churn Analytics
+
+            </a>
+
+
+            <a
+                href="model-performance.html"
+                class="nav-item active"
+            >
+
+                <span>🤖</span>
+
+                Model Performance
+
+            </a>
+
+
+            <a
+                href="prediction.html"
+                class="nav-item"
+            >
+
+                <span>🔮</span>
+
+                Customer Prediction
+
+            </a>
+
+
+            <p class="nav-title nav-title-space">
+                SYSTEM
+            </p>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span>⚙️</span>
+
+                Settings
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="nav-item"
+            >
+
+                <span>🚪</span>
+
+                Logout
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- STATUS -->
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong>
+                        AI System Online
+                    </strong>
+
+                    <small>
+                        Model ready for prediction
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <p class="breadcrumb">
+                    TELCO AI / MODEL PERFORMANCE
+                </p>
+
+                <h1>
+                    Model Performance
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+
+                <div class="notification">
+                    🔔
+                </div>
+
+
+                <div class="user-profile">
+
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+
+                    <div class="user-details">
+
+                        <strong id="modelUsername">
+                            User
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ==========================================
+             PAGE INTRO
+        =========================================== -->
+
+        <section class="welcome-section">
+
+
+            <div>
+
+                <h2>
+                    Machine Learning Model Evaluation
+                </h2>
+
+                <p>
+                    Evaluate the performance of the trained
+                    customer churn classification models.
+                </p>
+
+            </div>
+
+
+            <a
+                href="prediction.html"
+                class="primary-action"
+            >
+
+                🔮 Predict Customer
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             PERFORMANCE CARDS
+        =========================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon blue">
+                        🎯
+                    </div>
+
+                    <span class="stat-label">
+                        ACCURACY
+                    </span>
+
+                </div>
+
+
+                <h3 id="accuracyValue">
+                    --
+                </h3>
+
+
+                <p>
+                    Classification Accuracy
+                </p>
+
+
+                <div class="stat-footer">
+
+                    <span class="positive">
+                        Model Evaluation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <span class="stat-label">
+                        PRECISION
+                    </span>
+
+                </div>
+
+
+                <h3 id="precisionValue">
+                    --
+                </h3>
+
+
+                <p>
+                    Prediction Precision
+                </p>
+
+
+                <div class="stat-footer">
+
+                    <span class="positive">
+                        Model Evaluation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon purple">
+                        🔄
+                    </div>
+
+                    <span class="stat-label">
+                        RECALL
+                    </span>
+
+                </div>
+
+
+                <h3 id="recallValue">
+                    --
+                </h3>
+
+
+                <p>
+                    Churn Detection Recall
+                </p>
+
+
+                <div class="stat-footer">
+
+                    <span class="positive">
+                        Model Evaluation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon red">
+                        ⭐
+                    </div>
+
+                    <span class="stat-label">
+                        F1 SCORE
+                    </span>
+
+                </div>
+
+
+                <h3 id="f1Value">
+                    --
+                </h3>
+
+
+                <p>
+                    Balanced F1 Performance
+                </p>
+
+
+                <div class="stat-footer">
+
+                    <span class="positive">
+                        Model Evaluation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             BEST MODEL
+        =========================================== -->
+
+        <section class="dashboard-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        🏆 Best Performing Model
+                    </h3>
+
+                    <p>
+                        Selected machine learning model
+                        used for customer churn prediction.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dataset-details">
+
+
+                <div class="dataset-row">
+
+                    <span>
+                        Selected Model
+                    </span>
+
+                    <strong id="bestModel">
+                        Loading...
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-row">
+
+                    <span>
+                        Task
+                    </span>
+
+                    <strong>
+                        Binary Classification
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-row">
+
+                    <span>
+                        Target
+                    </span>
+
+                    <strong>
+                        Customer Churn
+                    </strong>
+
+                </div>
+
+
+                <div class="dataset-row">
+
+                    <span>
+                        Model File
+                    </span>
+
+                    <strong>
+                        best_churn_model.pkl
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             MODEL COMPARISON IMAGE
+        =========================================== -->
+
+        <section class="dashboard-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        📊 Model Comparison
+                    </h3>
+
+                    <p>
+                        Comparison of the machine learning
+                        algorithms trained for churn prediction.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="model-image-container">
+
+                <img
+                    src="../outputs/model_comparison.png"
+                    alt="Model Comparison"
+                    class="performance-image"
+                    onerror="this.style.display='none'; document.getElementById('comparisonError').style.display='block';"
+                >
+
+
+                <div
+                    id="comparisonError"
+                    style="display:none;"
+                >
+
+                    <p>
+                        Model comparison image not found.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             CONFUSION MATRIX + ROC
+        =========================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- CONFUSION MATRIX -->
+
+            <div class="dashboard-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            🔢 Confusion Matrix
+                        </h3>
+
+                        <p>
+                            Classification prediction results.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-image-container">
+
+                    <img
+                        src="../outputs/confusion_matrix.png"
+                        alt="Confusion Matrix"
+                        class="performance-image"
+                        onerror="this.style.display='none';"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ROC CURVE -->
+
+            <div class="dashboard-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            📈 ROC Curve
+                        </h3>
+
+                        <p>
+                            Model classification performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="model-image-container">
+
+                    <img
+                        src="../outputs/roc_curve.png"
+                        alt="ROC Curve"
+                        class="performance-image"
+                        onerror="this.style.display='none';"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             FEATURE IMPORTANCE
+        =========================================== -->
+
+        <section class="dashboard-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        📌 Feature Importance
+                    </h3>
+
+                    <p>
+                        Features that contribute to customer
+                        churn prediction.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="model-image-container">
+
+                <img
+                    src="../outputs/feature_coefficients.png"
+                    alt="Feature Importance"
+                    class="performance-image"
+                    onerror="this.style.display='none';"
+                >
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             MODEL METRICS EXPLANATION
+        =========================================== -->
+
+        <section class="dashboard-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        📚 Evaluation Metrics
+                    </h3>
+
+                    <p>
+                        Understanding the machine learning
+                        evaluation metrics.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+
+                <div>
+
+                    <span>
+                        🎯
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Accuracy
+                        </strong>
+
+                        <small>
+                            Measures the overall percentage
+                            of correct predictions.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Precision
+                        </strong>
+
+                        <small>
+                            Measures how many predicted churn
+                            customers were actually churn customers.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        🔄
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Recall
+                        </strong>
+
+                        <small>
+                            Measures how effectively the model
+                            identifies actual churn customers.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        ⭐
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            F1 Score
+                        </strong>
+
+                        <small>
+                            Provides a balance between precision
+                            and recall.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             NEXT ACTION
+        =========================================== -->
+
+        <section class="quick-section">
+
+
+            <div class="dashboard-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Ready to Test the Model?
+                        </h3>
+
+                        <p>
+                            Enter customer information and
+                            generate an individual churn prediction.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="prediction.html"
+                        class="primary-action"
+                    >
+
+                        🔮 Customer Prediction →
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+=========================================== -->
+
+<script>
+
+
+const API_URL =
+    "http://127.0.0.1:5000";
+
+
+
+/* ==========================================
+   CHECK LOGIN
+========================================== */
+
+fetch(
+    API_URL + "/auth-check",
+    {
+        method: "GET",
+        credentials: "include"
+    }
+)
+.then(response => {
+
+    if (!response.ok) {
+
+        window.location.href =
+            "index.html";
+
+        return null;
+
+    }
+
+    return response.json();
+
+})
+.then(data => {
+
+    if (
+        data &&
+        data.username
+    ) {
+
+        document.getElementById(
+            "modelUsername"
+        ).textContent =
+            data.username;
+
+    }
+
+})
+.catch(error => {
+
+    console.error(
+        "Authentication error:",
+        error
+    );
+
+});
+
+
+
+/* ==========================================
+   LOAD MODEL INFORMATION
+========================================== */
+
+/*
+   These values will be connected to your
+   actual model_comparison.csv later.
+
+   We intentionally don't invent your
+   manually trained model's metric values.
+*/
+
+document.getElementById(
+    "bestModel"
+).textContent =
+    "Trained Model";
+
+
+
+/* ==========================================
+   IMAGE CHECK
+========================================== */
+
+console.log(
+    "Model Performance page loaded."
+);
+
+console.log(
+    "Model comparison:",
+    "../outputs/model_comparison.png"
+);
+
+console.log(
+    "Confusion matrix:",
+    "../outputs/confusion_matrix.png"
+);
+
+console.log(
+    "ROC curve:",
+    "../outputs/roc_curve.png"
+);
+
+console.log(
+    "Feature coefficients:",
+    "../outputs/feature_coefficients.png"
+);
+
+
+</script>
+
+
+</body>
+
+</html>

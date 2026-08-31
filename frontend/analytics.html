@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telco AI - Churn Analytics</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                📊
+            </div>
+
+            <div>
+                <h2>Telco AI</h2>
+                <p>Customer Intelligence</p>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="dataset.html" class="nav-item">
+                <span>👥</span>
+                Dataset Overview
+            </a>
+
+            <a href="analytics.html" class="nav-item active">
+                <span>📈</span>
+                Churn Analytics
+            </a>
+
+            <a href="model-performance.html" class="nav-item">
+                <span>🤖</span>
+                Model Performance
+            </a>
+
+            <a href="prediction.html" class="nav-item">
+                <span>🔮</span>
+                Customer Prediction
+            </a>
+
+
+            <p class="nav-title nav-title-space">
+                SYSTEM
+            </p>
+
+            <a href="#" class="nav-item">
+                <span>⚙️</span>
+                Settings
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <span>🚪</span>
+                Logout
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>AI System Online</strong>
+
+                    <small>
+                        Model ready for prediction
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="breadcrumb">
+                    TELCO AI / CHURN ANALYTICS
+                </p>
+
+                <h1>
+                    Churn Analytics
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+                    <div class="user-details">
+
+                        <strong id="analyticsUsername">
+                            User
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon blue">
+                        👥
+                    </div>
+
+                    <span class="stat-label">
+                        CUSTOMERS
+                    </span>
+
+                </div>
+
+                <h3>
+                    7,043
+                </h3>
+
+                <p>
+                    Total Customers
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon red">
+                        ⚠️
+                    </div>
+
+                    <span class="stat-label">
+                        CHURN RATE
+                    </span>
+
+                </div>
+
+                <h3>
+                    26.54%
+                </h3>
+
+                <p>
+                    Customers Churned
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <span class="stat-label">
+                        RETENTION
+                    </span>
+
+                </div>
+
+                <h3>
+                    73.46%
+                </h3>
+
+                <p>
+                    Customers Retained
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-top">
+
+                    <div class="stat-icon purple">
+                        📊
+                    </div>
+
+                    <span class="stat-label">
+                        ANALYTICS
+                    </span>
+
+                </div>
+
+                <h3>
+                    20
+                </h3>
+
+                <p>
+                    Customer Features
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CHARTS ================= -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- CHURN DISTRIBUTION -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Churn Distribution
+                        </h3>
+
+                        <p>
+                            Customer retention overview
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="chart-container">
+
+                    <canvas id="churnChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTRACT ANALYSIS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Contract Analysis
+                        </h3>
+
+                        <p>
+                            Churn by contract type
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="chart-container">
+
+                    <canvas id="contractChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= SECOND ROW ================= -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- PAYMENT METHOD -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Payment Method
+                        </h3>
+
+                        <p>
+                            Customer distribution
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="chart-container">
+
+                    <canvas id="paymentChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- INTERNET SERVICE -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Internet Service
+                        </h3>
+
+                        <p>
+                            Customer service distribution
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="chart-container">
+
+                    <canvas id="internetChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INSIGHT ================= -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        🔍 Key Churn Insights
+                    </h3>
+
+                    <p>
+                        Important observations from the dataset
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+
+                <div>
+
+                    <span>⚠️</span>
+
+                    <div>
+
+                        <strong>
+                            Month-to-month customers
+                        </strong>
+
+                        <small>
+                            Tend to have higher churn risk
+                            compared with longer contracts.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>💳</span>
+
+                    <div>
+
+                        <strong>
+                            Payment behaviour
+                        </strong>
+
+                        <small>
+                            Payment method can be an important
+                            factor in churn analysis.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <span>📅</span>
+
+                    <div>
+
+                        <strong>
+                            Customer tenure
+                        </strong>
+
+                        <small>
+                            Customer tenure is an important
+                            variable for churn prediction.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const API_URL = "http://127.0.0.1:5000";
+
+
+/* ==========================================
+   CHECK LOGIN
+========================================== */
+
+fetch(
+    API_URL + "/auth-check",
+    {
+        method: "GET",
+        credentials: "include"
+    }
+)
+.then(response => {
+
+    if (!response.ok) {
+
+        window.location.href = "index.html";
+
+        return null;
+    }
+
+    return response.json();
+
+})
+.then(data => {
+
+    if (data && data.username) {
+
+        document.getElementById(
+            "analyticsUsername"
+        ).textContent = data.username;
+
+    }
+
+})
+.catch(error => {
+
+    console.error(
+        "Authentication error:",
+        error
+    );
+
+});
+
+
+/* ==========================================
+   CHURN DISTRIBUTION
+========================================== */
+
+new Chart(
+    document.getElementById("churnChart"),
+    {
+        type: "doughnut",
+
+        data: {
+
+            labels: [
+                "Retained",
+                "Churned"
+            ],
+
+            datasets: [{
+
+                data: [
+                    5174,
+                    1869
+                ]
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            plugins: {
+
+                legend: {
+                    position: "bottom"
+                }
+
+            }
+
+        }
+
+    }
+);
+
+
+/* ==========================================
+   CONTRACT ANALYSIS
+========================================== */
+
+new Chart(
+    document.getElementById("contractChart"),
+    {
+        type: "bar",
+
+        data: {
+
+            labels: [
+                "Month-to-month",
+                "One year",
+                "Two year"
+            ],
+
+            datasets: [{
+
+                label: "Customers",
+
+                data: [
+                    3875,
+                    1473,
+                    1695
+                ]
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            scales: {
+
+                y: {
+                    beginAtZero: true
+                }
+
+            }
+
+        }
+
+    }
+);
+
+
+/* ==========================================
+   PAYMENT METHOD
+========================================== */
+
+new Chart(
+    document.getElementById("paymentChart"),
+    {
+        type: "bar",
+
+        data: {
+
+            labels: [
+                "Electronic check",
+                "Mailed check",
+                "Bank transfer",
+                "Credit card"
+            ],
+
+            datasets: [{
+
+                label: "Customers",
+
+                data: [
+                    2365,
+                    1612,
+                    1544,
+                    1522
+                ]
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            scales: {
+
+                y: {
+                    beginAtZero: true
+                }
+
+            }
+
+        }
+
+    }
+);
+
+
+/* ==========================================
+   INTERNET SERVICE
+========================================== */
+
+new Chart(
+    document.getElementById("internetChart"),
+    {
+        type: "bar",
+
+        data: {
+
+            labels: [
+                "DSL",
+                "Fiber optic",
+                "No internet"
+            ],
+
+            datasets: [{
+
+                label: "Customers",
+
+                data: [
+                    2421,
+                    3096,
+                    1526
+                ]
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            scales: {
+
+                y: {
+                    beginAtZero: true
+                }
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

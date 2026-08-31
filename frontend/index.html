@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telco AI - Customer Churn Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-background">
+
+        <div class="login-card">
+
+            <!-- Logo -->
+            <div class="brand">
+
+                <div class="brand-icon">
+                    📊
+                </div>
+
+                <div>
+                    <h1>Telco AI</h1>
+                    <p>Customer Intelligence</p>
+                </div>
+
+            </div>
+
+
+            <!-- Welcome -->
+            <div class="login-heading">
+
+                <h2>Welcome Back</h2>
+
+                <p>
+                    Sign in to access your customer churn analytics dashboard.
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>👤</span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Enter your username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        Remember me
+
+                    </label>
+
+                </div>
+
+
+                <!-- Login Error -->
+                <div
+                    id="loginError"
+                    class="login-error hidden"
+                >
+                </div>
+
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+
+                    <span id="loginButtonText">
+                        🔐 Sign In
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Create Account -->
+            <div class="register-section">
+
+                <p>
+                    Don't have an account?
+                </p>
+
+                <a
+                    href="register.html"
+                    class="register-button"
+                >
+                    ✨ Create Account
+                </a>
+
+            </div>
+
+
+            <!-- Footer -->
+            <div class="login-footer">
+
+                <span>
+                    AI-Powered Customer Churn Prediction
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Decorative Information -->
+        <div class="login-info">
+
+            <div class="info-content">
+
+                <span class="ai-badge">
+                    ✨ AI POWERED ANALYTICS
+                </span>
+
+                <h2>
+                    Predict.
+                    <br>
+                    Analyze.
+                    <br>
+                    <span>Prevent Churn.</span>
+                </h2>
+
+                <p>
+                    Use machine learning to identify customers
+                    who are most likely to leave your telecom service.
+                </p>
+
+                <div class="info-stats">
+
+                    <div>
+                        <strong>ML</strong>
+                        <span>Powered</span>
+                    </div>
+
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Analytics</span>
+                    </div>
+
+                    <div>
+                        <strong>AI</strong>
+                        <span>Prediction</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

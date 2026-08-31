@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telco AI - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-page">
+
+    <div class="dashboard-layout">
+
+        <!-- ======================================
+             SIDEBAR
+        ======================================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                    📊
+                </div>
+
+                <div>
+                    <h2>Telco AI</h2>
+                    <p>Customer Intelligence</p>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">MAIN MENU</p>
+
+                <a href="dashboard.html" class="nav-item active">
+                    <span>📊</span>
+                    Dashboard
+                </a>
+
+                <a href="dataset.html" class="nav-item">
+                    <span>👥</span>
+                    Dataset Overview
+                </a>
+
+                <a href="analytics.html" class="nav-item">
+                    <span>📈</span>
+                    Churn Analytics
+                </a>
+
+                <a href="model-performance.html" class="nav-item">
+                    <span>🤖</span>
+                    Model Performance
+                </a>
+
+                <a href="prediction.html" class="nav-item">
+                    <span>🔮</span>
+                    Customer Prediction
+                </a>
+
+
+                <p class="nav-title nav-title-space">
+                    SYSTEM
+                </p>
+
+                <a href="#" class="nav-item">
+                    <span>⚙️</span>
+                    Settings
+                </a>
+
+                <a href="#" class="nav-item" id="logoutButton">
+                    <span>🚪</span>
+                    Logout
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar bottom -->
+
+            <div class="sidebar-bottom">
+
+                <div class="ai-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>AI System Online</strong>
+                        <small>Model ready for prediction</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ======================================
+             MAIN CONTENT
+        ======================================= -->
+
+        <main class="main-content">
+
+
+            <!-- ==================================
+                 TOP BAR
+            =================================== -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="breadcrumb">
+                        TELCO AI / DASHBOARD
+                    </p>
+
+                    <h1>Customer Churn Dashboard</h1>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="notification">
+                        🔔
+                    </div>
+
+                    <div class="user-profile">
+
+                        <div class="user-avatar">
+                            A
+                        </div>
+
+                        <div class="user-details">
+
+                            <strong id="dashboardUsername">
+                                Admin
+                            </strong>
+
+                            <span>Administrator</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==================================
+                 WELCOME SECTION
+            =================================== -->
+
+            <section class="welcome-section">
+
+                <div>
+
+                    <h2>
+                        Welcome back,
+                        <span id="welcomeUsername">
+                            Admin
+                        </span>
+                        👋
+                    </h2>
+
+                    <p>
+                        Here's what's happening with your customer
+                        churn data today.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="prediction.html"
+                    class="primary-action"
+                >
+                    🔮 Predict Customer Churn
+                </a>
+
+            </section>
+
+
+            <!-- ==================================
+                 STATISTICS CARDS
+            =================================== -->
+
+            <section class="stats-grid">
+
+
+                <!-- Total Customers -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon blue">
+                            👥
+                        </div>
+
+                        <span class="stat-label">
+                            CUSTOMER BASE
+                        </span>
+
+                    </div>
+
+                    <h3 id="totalCustomers">
+                        7,043
+                    </h3>
+
+                    <p>
+                        Total Customers
+                    </p>
+
+                    <div class="stat-footer">
+
+                        <span class="positive">
+                            ↑ Active Dataset
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Churned -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon red">
+                            ⚠️
+                        </div>
+
+                        <span class="stat-label">
+                            CHURNED
+                        </span>
+
+                    </div>
+
+                    <h3 id="churnedCustomers">
+                        1,869
+                    </h3>
+
+                    <p>
+                        Customers Churned
+                    </p>
+
+                    <div class="stat-footer">
+
+                        <span class="negative">
+                            Requires attention
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Retained -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon green">
+                            ✓
+                        </div>
+
+                        <span class="stat-label">
+                            RETAINED
+                        </span>
+
+                    </div>
+
+                    <h3 id="retainedCustomers">
+                        5,174
+                    </h3>
+
+                    <p>
+                        Customers Retained
+                    </p>
+
+                    <div class="stat-footer">
+
+                        <span class="positive">
+                            Stable customers
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Churn Rate -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon purple">
+                            📈
+                        </div>
+
+                        <span class="stat-label">
+                            CHURN RATE
+                        </span>
+
+                    </div>
+
+                    <h3 id="churnRate">
+                        26.5%
+                    </h3>
+
+                    <p>
+                        Overall Churn Rate
+                    </p>
+
+                    <div class="stat-footer">
+
+                        <span class="warning">
+                            Monitor closely
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 CHART SECTION
+            =================================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- Churn Distribution -->
+
+                <div class="dashboard-card large-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Churn Distribution
+                            </h3>
+
+                            <p>
+                                Customer retention overview
+                            </p>
+
+                        </div>
+
+                        <span class="card-menu">
+                            ⋮
+                        </span>
+
+                    </div>
+
+                    <div class="chart-container doughnut-container">
+
+                        <canvas id="churnChart"></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Contract -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Contract Analysis
+                            </h3>
+
+                            <p>
+                                Churn by contract type
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas id="contractChart"></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Internet Service -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Internet Service
+                            </h3>
+
+                            <p>
+                                Customer distribution
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas id="internetChart"></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Payment Method -->
+
+                <div class="dashboard-card large-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Payment Method Analysis
+                            </h3>
+
+                            <p>
+                                Churn patterns by payment method
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas id="paymentChart"></canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 QUICK ACTIONS
+            =================================== -->
+
+            <section class="quick-section">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Quick Actions
+                            </h3>
+
+                            <p>
+                                Access important features
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+                        <a href="prediction.html">
+
+                            <span>🔮</span>
+
+                            <div>
+                                <strong>
+                                    Predict Customer
+                                </strong>
+
+                                <small>
+                                    Analyze churn risk
+                                </small>
+                            </div>
+
+                            <b>→</b>
+
+                        </a>
+
+
+                        <a href="analytics.html">
+
+                            <span>📈</span>
+
+                            <div>
+                                <strong>
+                                    View Analytics
+                                </strong>
+
+                                <small>
+                                    Explore churn patterns
+                                </small>
+                            </div>
+
+                            <b>→</b>
+
+                        </a>
+
+
+                        <a href="model-performance.html">
+
+                            <span>🤖</span>
+
+                            <div>
+                                <strong>
+                                    Model Performance
+                                </strong>
+
+                                <small>
+                                    View ML metrics
+                                </small>
+                            </div>
+
+                            <b>→</b>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- Dashboard JavaScript -->
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

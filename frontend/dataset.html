@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Telco AI - Dataset Overview</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+    <div class="dashboard-layout">
+
+
+        <!-- ======================================
+             SIDEBAR
+        ======================================= -->
+
+        <aside class="sidebar">
+
+            <!-- BRAND -->
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h2>Telco AI</h2>
+
+                    <p>
+                        Customer Intelligence
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">
+                    MAIN MENU
+                </p>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="dashboard.html"
+                    class="nav-item"
+                >
+
+                    <span>📊</span>
+
+                    Dashboard
+
+                </a>
+
+
+                <!-- Dataset -->
+
+                <a
+                    href="dataset.html"
+                    class="nav-item active"
+                >
+
+                    <span>👥</span>
+
+                    Dataset Overview
+
+                </a>
+
+
+                <!-- Analytics -->
+
+                <a
+                    href="analytics.html"
+                    class="nav-item"
+                >
+
+                    <span>📈</span>
+
+                    Churn Analytics
+
+                </a>
+
+
+                <!-- Model -->
+
+                <a
+                    href="model-performance.html"
+                    class="nav-item"
+                >
+
+                    <span>🤖</span>
+
+                    Model Performance
+
+                </a>
+
+
+                <!-- Prediction -->
+
+                <a
+                    href="prediction.html"
+                    class="nav-item"
+                >
+
+                    <span>🔮</span>
+
+                    Customer Prediction
+
+                </a>
+
+
+                <!-- SYSTEM -->
+
+                <p class="nav-title nav-title-space">
+                    SYSTEM
+                </p>
+
+
+                <!-- Settings -->
+
+                <a
+                    href="#"
+                    class="nav-item"
+                >
+
+                    <span>⚙️</span>
+
+                    Settings
+
+                </a>
+
+
+                <!-- Logout -->
+
+                <a
+                    href="index.html"
+                    class="nav-item"
+                >
+
+                    <span>🚪</span>
+
+                    Logout
+
+                </a>
+
+            </nav>
+
+
+            <!-- SIDEBAR STATUS -->
+
+            <div class="sidebar-bottom">
+
+                <div class="ai-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+
+                        <strong>
+                            AI System Online
+                        </strong>
+
+                        <small>
+                            Model ready for prediction
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ======================================
+             MAIN CONTENT
+        ======================================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="breadcrumb">
+                        TELCO AI / DATASET OVERVIEW
+                    </p>
+
+                    <h1>
+                        Dataset Overview
+                    </h1>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="notification">
+                        🔔
+                    </div>
+
+
+                    <div class="user-profile">
+
+                        <div class="user-avatar">
+                            U
+                        </div>
+
+                        <div class="user-details">
+
+                            <strong id="datasetUsername">
+                                User
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ======================================
+                 WELCOME
+            ======================================= -->
+
+            <section class="welcome-section">
+
+                <div>
+
+                    <h2>
+                        Telco Customer Dataset
+                    </h2>
+
+                    <p>
+                        Explore the customer data used by
+                        the churn prediction system.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="prediction.html"
+                    class="primary-action"
+                >
+
+                    🔮 Predict Customer Churn
+
+                </a>
+
+            </section>
+
+
+            <!-- ======================================
+                 STATISTICS
+            ======================================= -->
+
+            <section class="stats-grid">
+
+
+                <!-- Total Customers -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon blue">
+                            👥
+                        </div>
+
+                        <span class="stat-label">
+                            CUSTOMER BASE
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        7,043
+                    </h3>
+
+                    <p>
+                        Total Customers
+                    </p>
+
+
+                    <div class="stat-footer">
+
+                        <span class="positive">
+                            Active Dataset
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Churned -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon red">
+                            ⚠️
+                        </div>
+
+                        <span class="stat-label">
+                            CHURNED
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        1,869
+                    </h3>
+
+                    <p>
+                        Customers Churned
+                    </p>
+
+
+                    <div class="stat-footer">
+
+                        <span class="negative">
+                            Requires attention
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Retained -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon green">
+                            ✓
+                        </div>
+
+                        <span class="stat-label">
+                            RETAINED
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        5,174
+                    </h3>
+
+                    <p>
+                        Customers Retained
+                    </p>
+
+
+                    <div class="stat-footer">
+
+                        <span class="positive">
+                            Stable customers
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Features -->
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon purple">
+                            📋
+                        </div>
+
+                        <span class="stat-label">
+                            FEATURES
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        20
+                    </h3>
+
+                    <p>
+                        Dataset Features
+                    </p>
+
+
+                    <div class="stat-footer">
+
+                        <span class="positive">
+                            ML Inputs
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ======================================
+                 DATASET INFORMATION
+            ======================================= -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- Dataset Information -->
+
+                <div class="dashboard-card large-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Telco Customer Churn Dataset
+                            </h3>
+
+                            <p>
+                                Dataset information
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dataset-details">
+
+
+                        <div class="dataset-row">
+
+                            <span>
+                                Dataset Name
+                            </span>
+
+                            <strong>
+                                Telco Customer Churn
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dataset-row">
+
+                            <span>
+                                Total Records
+                            </span>
+
+                            <strong>
+                                7,043
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dataset-row">
+
+                            <span>
+                                Target Variable
+                            </span>
+
+                            <strong>
+                                Churn
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dataset-row">
+
+                            <span>
+                                Problem Type
+                            </span>
+
+                            <strong>
+                                Binary Classification
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dataset-row">
+
+                            <span>
+                                Machine Learning
+                            </span>
+
+                            <strong>
+                                Customer Churn Prediction
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Churn Information -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Churn Distribution
+                            </h3>
+
+                            <p>
+                                Customer status
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dataset-churn-box">
+
+                        <div>
+
+                            <span>
+                                Churned
+                            </span>
+
+                            <strong>
+                                1,869
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Retained
+                            </span>
+
+                            <strong>
+                                5,174
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ======================================
+                 CUSTOMER FEATURES
+            ======================================= -->
+
+            <section class="dashboard-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Customer Features
+                        </h3>
+
+                        <p>
+                            Attributes available in the Telco
+                            customer dataset
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+
+                    <div>
+
+                        <span>👤</span>
+
+                        <div>
+
+                            <strong>
+                                Gender
+                            </strong>
+
+                            <small>
+                                Customer gender
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>👴</span>
+
+                        <div>
+
+                            <strong>
+                                SeniorCitizen
+                            </strong>
+
+                            <small>
+                                Senior citizen indicator
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>👫</span>
+
+                        <div>
+
+                            <strong>
+                                Partner
+                            </strong>
+
+                            <small>
+                                Partner status
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>👨‍👩‍👧</span>
+
+                        <div>
+
+                            <strong>
+                                Dependents
+                            </strong>
+
+                            <small>
+                                Dependent status
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>📅</span>
+
+                        <div>
+
+                            <strong>
+                                Tenure
+                            </strong>
+
+                            <small>
+                                Months with company
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>📱</span>
+
+                        <div>
+
+                            <strong>
+                                PhoneService
+                            </strong>
+
+                            <small>
+                                Phone service subscription
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>🌐</span>
+
+                        <div>
+
+                            <strong>
+                                InternetService
+                            </strong>
+
+                            <small>
+                                Internet service type
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>📄</span>
+
+                        <div>
+
+                            <strong>
+                                Contract
+                            </strong>
+
+                            <small>
+                                Contract type
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>💰</span>
+
+                        <div>
+
+                            <strong>
+                                MonthlyCharges
+                            </strong>
+
+                            <small>
+                                Monthly charges
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>💳</span>
+
+                        <div>
+
+                            <strong>
+                                PaymentMethod
+                            </strong>
+
+                            <small>
+                                Payment method
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- ======================================
+                 ACTIONS
+            ======================================= -->
+
+            <section class="quick-section">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Continue Analysis
+                            </h3>
+
+                            <p>
+                                Explore the next stages of the
+                                customer churn project.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+
+                        <a href="analytics.html">
+
+                            <span>
+                                📈
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Churn Analytics
+                                </strong>
+
+                                <small>
+                                    Explore customer churn patterns
+                                </small>
+
+                            </div>
+
+                            <b>
+                                →
+                            </b>
+
+                        </a>
+
+
+                        <a href="model-performance.html">
+
+                            <span>
+                                🤖
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Model Performance
+                                </strong>
+
+                                <small>
+                                    View machine learning metrics
+                                </small>
+
+                            </div>
+
+                            <b>
+                                →
+                            </b>
+
+                        </a>
+
+
+                        <a href="prediction.html">
+
+                            <span>
+                                🔮
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Customer Prediction
+                                </strong>
+
+                                <small>
+                                    Predict individual customer churn
+                                </small>
+
+                            </div>
+
+                            <b>
+                                →
+                            </b>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- ======================================
+         AUTHENTICATION
+    ======================================= -->
+
+    <script>
+
+        const API_URL =
+            "http://127.0.0.1:5000";
+
+
+        fetch(
+            API_URL + "/auth-check",
+            {
+                method: "GET",
+                credentials: "include"
+            }
+        )
+        .then(response => {
+
+            if (!response.ok) {
+
+                window.location.href =
+                    "index.html";
+
+                return null;
+
+            }
+
+            return response.json();
+
+        })
+        .then(data => {
+
+            if (
+                data &&
+                data.username
+            ) {
+
+                document.getElementById(
+                    "datasetUsername"
+                ).textContent =
+                    data.username;
+
+            }
+
+        })
+        .catch(error => {
+
+            console.error(
+                "Authentication error:",
+                error
+            );
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

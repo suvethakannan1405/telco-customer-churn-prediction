@@ -1,0 +1,1506 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   LOGIN PAGE
+========================================== */
+
+.login-page {
+    min-height: 100vh;
+    background: #070b14;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.login-background {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(59, 130, 246, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(139, 92, 246, 0.16),
+            transparent 30%
+        ),
+        #070b14;
+}
+
+
+/* ==========================================
+   DECORATIVE CIRCLES
+========================================== */
+
+.login-background::before {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    top: -250px;
+    left: -200px;
+}
+
+.login-background::after {
+    content: "";
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    bottom: -350px;
+    right: -250px;
+}
+
+
+/* ==========================================
+   LOGIN CARD AREA
+========================================== */
+
+.login-card {
+    width: 460px;
+
+    min-height: 600px;
+
+    margin: auto;
+    padding: 45px;
+
+    background: rgba(15, 23, 42, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: slideUp 0.7s ease;
+}
+
+
+/* ==========================================
+   BRAND
+========================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 45px;
+}
+
+.brand-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 24px;
+
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #8b5cf6
+    );
+
+    box-shadow:
+        0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.brand h1 {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+}
+
+.brand p {
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   LOGIN HEADING
+========================================== */
+
+.login-heading {
+    margin-bottom: 32px;
+}
+
+.login-heading h2 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.login-heading p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #94a3b8;
+}
+
+
+/* ==========================================
+   INPUT GROUP
+========================================== */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #cbd5e1;
+}
+
+
+/* ==========================================
+   INPUT WRAPPER
+========================================== */
+
+.input-wrapper {
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 15px;
+
+    gap: 10px;
+
+    border-radius: 12px;
+
+    background: #0b1220;
+
+    border: 1px solid #1e293b;
+
+    transition: 0.3s;
+}
+
+.input-wrapper:focus-within {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input-wrapper span {
+    font-size: 17px;
+
+    opacity: 0.7;
+}
+
+.input-wrapper input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.input-wrapper input::placeholder {
+    color: #64748b;
+}
+
+
+/* ==========================================
+   PASSWORD BUTTON
+========================================== */
+
+.password-toggle {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    opacity: 0.7;
+
+    transition: 0.2s;
+}
+
+.password-toggle:hover {
+    opacity: 1;
+}
+
+
+/* ==========================================
+   LOGIN OPTIONS
+========================================== */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 5px 0 20px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.login-options input {
+    accent-color: #3b82f6;
+}
+
+
+/* ==========================================
+   LOGIN ERROR
+========================================== */
+
+.login-error {
+    padding: 12px;
+
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+
+    background: rgba(239, 68, 68, 0.1);
+
+    border: 1px solid rgba(239, 68, 68, 0.25);
+
+    color: #fca5a5;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================
+   LOGIN BUTTON
+========================================== */
+
+.login-button {
+    width: 100%;
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    box-shadow:
+        0 12px 30px rgba(59, 130, 246, 0.25);
+
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 35px rgba(59, 130, 246, 0.35);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   DEMO LOGIN
+========================================== */
+
+.demo-login {
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    text-align: center;
+}
+
+.demo-login > p {
+    font-size: 11px;
+
+    color: #64748b;
+
+    margin-bottom: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.demo-details {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+.demo-details strong {
+    color: #e2e8f0;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.login-footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    font-size: 11px;
+
+    color: #475569;
+}
+
+
+/* ==========================================
+   RIGHT INFORMATION PANEL
+========================================== */
+
+.login-info {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 60px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.info-content {
+    max-width: 560px;
+
+    animation: fadeIn 1s ease;
+}
+
+
+/* ==========================================
+   AI BADGE
+========================================== */
+
+.ai-badge {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background: rgba(59, 130, 246, 0.1);
+
+    border: 1px solid rgba(59, 130, 246, 0.25);
+
+    color: #93c5fd;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   INFO HEADING
+========================================== */
+
+.info-content h2 {
+    font-size: 62px;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.info-content h2 span {
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #a78bfa
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ==========================================
+   INFO DESCRIPTION
+========================================== */
+
+.info-content > p {
+    max-width: 480px;
+
+    color: #94a3b8;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+}
+
+
+/* ==========================================
+   INFO STATS
+========================================== */
+
+.info-stats {
+    display: flex;
+
+    gap: 50px;
+}
+
+.info-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.info-stats strong {
+    font-size: 24px;
+}
+
+.info-stats span {
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .login-info {
+        display: none;
+    }
+
+    .login-card {
+        width: 90%;
+        max-width: 460px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .login-card {
+        padding: 30px 25px;
+
+        min-height: auto;
+
+        margin: 20px auto;
+    }
+
+    .login-heading h2 {
+        font-size: 26px;
+    }
+
+    .brand {
+        margin-bottom: 35px;
+    }
+}
+/* ==========================================
+   DASHBOARD PAGE
+========================================== */
+
+.dashboard-page {
+    background: #070b14;
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   DASHBOARD LAYOUT
+========================================== */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+
+    background: #0b1220;
+
+    border-right: 1px solid #1e293b;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: 10;
+}
+
+
+/* ==========================================
+   SIDEBAR BRAND
+========================================== */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 28px 22px;
+
+    border-bottom: 1px solid #1e293b;
+}
+
+.sidebar-brand .brand-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    font-size: 20px;
+}
+
+.sidebar-brand h2 {
+    font-size: 18px;
+}
+
+.sidebar-brand p {
+    font-size: 10px;
+
+    color: #64748b;
+
+    margin-top: 3px;
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.sidebar-nav {
+    padding: 25px 14px;
+
+    flex: 1;
+}
+
+.nav-title {
+    font-size: 10px;
+
+    color: #475569;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+    padding: 0 12px;
+
+    margin-bottom: 10px;
+}
+
+.nav-title-space {
+    margin-top: 30px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 13px 14px;
+
+    margin-bottom: 5px;
+
+    border-radius: 10px;
+
+    color: #94a3b8;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.25s;
+}
+
+.nav-item span {
+    width: 22px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.nav-item:hover {
+    background: rgba(59, 130, 246, 0.08);
+
+    color: #e2e8f0;
+}
+
+.nav-item.active {
+    background: linear-gradient(
+        90deg,
+        rgba(37, 99, 235, 0.2),
+        rgba(124, 58, 237, 0.08)
+    );
+
+    color: #60a5fa;
+
+    border-left: 3px solid #3b82f6;
+}
+
+
+/* ==========================================
+   SIDEBAR STATUS
+========================================== */
+
+.sidebar-bottom {
+    padding: 18px;
+
+    border-top: 1px solid #1e293b;
+}
+
+.ai-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(34, 197, 94, 0.06);
+
+    border: 1px solid rgba(34, 197, 94, 0.12);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 10px rgba(34, 197, 94, 0.7);
+}
+
+.ai-status strong {
+    display: block;
+
+    font-size: 11px;
+
+    color: #86efac;
+}
+
+.ai-status small {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content {
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+
+    min-height: 100vh;
+
+    padding: 0 35px 40px;
+}
+
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar {
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #1e293b;
+}
+
+.breadcrumb {
+    font-size: 9px;
+
+    color: #64748b;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 6px;
+}
+
+.topbar h1 {
+    font-size: 22px;
+
+    color: #f8fafc;
+}
+
+.topbar-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.notification {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #0f172a;
+
+    border: 1px solid #1e293b;
+
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    font-weight: 700;
+}
+
+.user-details strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.user-details span {
+    display: block;
+
+    font-size: 10px;
+
+    color: #64748b;
+
+    margin-top: 3px;
+}
+
+
+/* ==========================================
+   WELCOME SECTION
+========================================== */
+
+.welcome-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 32px 0;
+}
+
+.welcome-section h2 {
+    font-size: 25px;
+
+    margin-bottom: 7px;
+}
+
+.welcome-section h2 span {
+    color: #60a5fa;
+}
+
+.welcome-section p {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.primary-action {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 13px 18px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.2);
+
+    transition: 0.25s;
+}
+
+.primary-action:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   STATISTICS
+========================================== */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: #0b1220;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    transition: 0.25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #334155;
+}
+
+.stat-card-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+.stat-icon.blue {
+    background: rgba(59, 130, 246, 0.12);
+}
+
+.stat-icon.red {
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.stat-icon.green {
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.stat-icon.purple {
+    background: rgba(139, 92, 246, 0.12);
+}
+
+.stat-label {
+    font-size: 8px;
+
+    color: #64748b;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+}
+
+.stat-card h3 {
+    font-size: 27px;
+
+    margin-bottom: 4px;
+
+    color: #f8fafc;
+}
+
+.stat-card > p {
+    font-size: 11px;
+
+    color: #64748b;
+}
+
+.stat-footer {
+    margin-top: 15px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #172033;
+
+    font-size: 10px;
+}
+
+.positive {
+    color: #4ade80;
+}
+
+.negative {
+    color: #f87171;
+}
+
+.warning {
+    color: #fbbf24;
+}
+
+
+/* ==========================================
+   DASHBOARD CARDS
+========================================== */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.dashboard-card {
+    background: #0b1220;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    min-height: 320px;
+}
+
+.large-card {
+    min-height: 360px;
+}
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    font-size: 10px;
+
+    color: #64748b;
+}
+
+.card-menu {
+    color: #64748b;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   CHART
+========================================== */
+
+.chart-container {
+    position: relative;
+
+    height: 245px;
+}
+
+.doughnut-container {
+    height: 270px;
+}
+
+
+/* ==========================================
+   QUICK SECTION
+========================================== */
+
+.quick-section {
+    margin-top: 18px;
+}
+
+.quick-section .dashboard-card {
+    min-height: auto;
+}
+
+.quick-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.quick-actions a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border-radius: 11px;
+
+    background: #0f172a;
+
+    border: 1px solid #1e293b;
+
+    text-decoration: none;
+
+    color: #e2e8f0;
+
+    transition: 0.25s;
+}
+
+.quick-actions a:hover {
+    border-color: #3b82f6;
+
+    transform: translateY(-2px);
+}
+
+.quick-actions a > span {
+    font-size: 20px;
+}
+
+.quick-actions a div {
+    flex: 1;
+}
+
+.quick-actions strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.quick-actions small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    color: #64748b;
+}
+
+.quick-actions b {
+    color: #64748b;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar-brand {
+        justify-content: center;
+
+        padding: 20px 10px;
+    }
+
+    .sidebar-brand > div:last-child {
+        display: none;
+    }
+
+    .nav-item {
+        justify-content: center;
+
+        padding: 13px 5px;
+    }
+
+    .nav-item span {
+        margin: 0;
+    }
+
+    .nav-item {
+        font-size: 0;
+    }
+
+    .nav-title,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 70px;
+
+        width: calc(100% - 70px);
+
+        padding: 0 18px 30px;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 17px;
+    }
+
+    .user-details {
+        display: none;
+    }
+}
+/* ==========================================
+   FIX MODEL PERFORMANCE GRAPH SIZE
+========================================== */
+
+.model-image-container {
+    width: 100% !important;
+    height: 330px !important;
+    max-height: 330px !important;
+    overflow: hidden !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 10px !important;
+    box-sizing: border-box !important;
+}
+
+
+/* Fix oversized graph images */
+
+.model-image-container .performance-image {
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 90% !important;
+    max-height: 300px !important;
+
+    object-fit: contain !important;
+
+    display: block !important;
+}
+
+
+/* Model comparison gets a little more space */
+
+.model-image-container img {
+    max-width: 90% !important;
+    max-height: 300px !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+
+/* Prevent the performance page from creating
+   horizontal scrolling */
+
+.dashboard-page {
+    overflow-x: hidden !important;
+}
+
+
+/* Keep performance cards compact */
+
+.dashboard-page .dashboard-card {
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+
+/* Two image cards */
+
+.dashboard-page .dashboard-grid .dashboard-card {
+    min-width: 0 !important;
+}
+
+
+/* Smaller comparison section */
+
+.dashboard-page .model-image-container {
+    margin-top: 5px !important;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .model-image-container {
+        height: 280px !important;
+        max-height: 280px !important;
+    }
+
+    .model-image-container img {
+        max-height: 250px !important;
+        max-width: 95% !important;
+    }
+
+}
