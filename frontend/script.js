@@ -16,8 +16,8 @@ const loginButtonText = document.getElementById("loginButtonText");
 // BACKEND URL
 // ==========================================
 
-const API_URL = "http://telco-customer-churn-prediction-lfzk.onrender.com";
 
+const API_URL = "https://telco-customer-churn-backend.onrender.com";
 
 // ==========================================
 // SHOW / HIDE PASSWORD
