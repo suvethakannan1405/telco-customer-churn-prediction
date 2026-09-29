@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "http://telco-customer-churn-prediction-lfzk.onrender.com";
 
 const predictionForm = document.getElementById("predictionForm");
 const predictionError = document.getElementById("predictionError");

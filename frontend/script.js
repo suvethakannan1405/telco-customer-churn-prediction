@@ -16,7 +16,7 @@ const loginButtonText = document.getElementById("loginButtonText");
 // BACKEND URL
 // ==========================================
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "http://telco-customer-churn-prediction-lfzk.onrender.com";
 
 
 // ==========================================

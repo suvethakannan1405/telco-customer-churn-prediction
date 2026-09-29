@@ -68,7 +68,7 @@ if (logoutButton) {
             try {
 
                 await fetch(
-                    "http://127.0.0.1:5000/logout",
+                    "http://telco-customer-churn-prediction-lfzk.onrender.com/logout",
                     {
                         method: "POST",
                         credentials: "include"
