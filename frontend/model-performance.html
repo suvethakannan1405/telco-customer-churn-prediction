@@ -557,10 +557,10 @@
             <div class="model-image-container">
 
                 <img
-                    src="../outputs/model_comparison.png"
+                    src="outputs/model_comparison.png"
                     alt="Model Comparison"
                     class="performance-image"
-                    onerror="this.style.display='none'; document.getElementById('comparisonError').style.display='block';"
+                    onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='../outputs/model_comparison.png';}else{this.style.display='none';document.getElementById('comparisonError').style.display='block';}"
                 >
 
 
@@ -614,10 +614,10 @@
                 <div class="model-image-container">
 
                     <img
-                        src="../outputs/confusion_matrix.png"
+                        src="outputs/confusion_matrix.png"
                         alt="Confusion Matrix"
                         class="performance-image"
-                        onerror="this.style.display='none';"
+                        onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='../outputs/confusion_matrix.png';}else{this.style.display='none';}"
                     >
 
                 </div>
@@ -652,10 +652,10 @@
                 <div class="model-image-container">
 
                     <img
-                        src="../outputs/roc_curve.png"
+                        src="outputs/roc_curve.png"
                         alt="ROC Curve"
                         class="performance-image"
-                        onerror="this.style.display='none';"
+                        onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='../outputs/roc_curve.png';}else{this.style.display='none';}"
                     >
 
                 </div>
@@ -696,10 +696,10 @@
             <div class="model-image-container">
 
                 <img
-                    src="../outputs/feature_coefficients.png"
+                    src="outputs/feature_coefficients.png"
                     alt="Feature Importance"
                     class="performance-image"
-                    onerror="this.style.display='none';"
+                    onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='../outputs/feature_coefficients.png';}else{this.style.display='none';}"
                 >
 
             </div>

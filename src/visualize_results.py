@@ -10,10 +10,11 @@ from sklearn.metrics import confusion_matrix, roc_curve, auc
 
 
 # ==========================================
-# 1. CREATE OUTPUT FOLDER
+# 1. CREATE OUTPUT FOLDERS
 # ==========================================
 
 os.makedirs("outputs", exist_ok=True)
+os.makedirs("frontend/outputs", exist_ok=True)
 
 
 # ==========================================
@@ -137,6 +138,10 @@ plt.savefig(
     "outputs/confusion_matrix.png",
     dpi=300
 )
+plt.savefig(
+    "frontend/outputs/confusion_matrix.png",
+    dpi=300
+)
 
 plt.close()
 
@@ -186,6 +191,10 @@ plt.tight_layout()
 
 plt.savefig(
     "outputs/roc_curve.png",
+    dpi=300
+)
+plt.savefig(
+    "frontend/outputs/roc_curve.png",
     dpi=300
 )
 
@@ -244,6 +253,10 @@ plt.tight_layout()
 
 plt.savefig(
     "outputs/model_comparison.png",
+    dpi=300
+)
+plt.savefig(
+    "frontend/outputs/model_comparison.png",
     dpi=300
 )
 
@@ -336,6 +349,10 @@ plt.tight_layout()
 
 plt.savefig(
     "outputs/feature_coefficients.png",
+    dpi=300
+)
+plt.savefig(
+    "frontend/outputs/feature_coefficients.png",
     dpi=300
 )
 

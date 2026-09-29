@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify, session, send_from_directory
 from flask_cors import CORS
 import joblib
 import pandas as pd
@@ -679,7 +679,25 @@ def predict():
 
 
 # ==========================================
-# 11. START SERVER
+# 11. SERVE OUTPUT IMAGES
+# ==========================================
+
+@app.route("/outputs/<path:filename>", methods=["GET"])
+def serve_outputs(filename):
+
+    outputs_dir = os.path.join(
+        BASE_DIR,
+        "outputs"
+    )
+
+    return send_from_directory(
+        outputs_dir,
+        filename
+    )
+
+
+# ==========================================
+# 12. START SERVER
 # ==========================================
 
 if __name__ == "__main__":
